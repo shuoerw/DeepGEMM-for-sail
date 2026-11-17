@@ -522,7 +522,7 @@ ConfigResult get_best_configs(int total_m, int m, int n, int k, int num_groups, 
     }
 
     // qwen3-next & deepseek gemm2 need to fix some issues
-    if ((best_block_m - 10 <= m && m <= best_block_m) && (best_block_m == 32 || best_block_m == 64) && k >= 192) {
+    if ((best_block_m - 18 <= m && m <= best_block_m) && (best_block_m == 32 || best_block_m == 64) && k >= 192) {
         best_block_m = best_block_m * 2;
     }
 
